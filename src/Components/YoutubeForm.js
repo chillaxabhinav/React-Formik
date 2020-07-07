@@ -10,18 +10,22 @@ const validationSchema = Yup.object({
     channel : Yup.string().required('Required')
 });
 
+const initialValues = {
+    name : '',
+    email : '',
+    channel : ''
+};
+
+const onSubmit = (values) => {
+    console.log(values);
+}
+
 const YoutubeForm = () =>{
 
 
     const formik = useFormik({
-        initialValues : {
-            name : '',
-            email : '',
-            channel : ''
-        },
-        onSubmit : values => {
-            console.log(values);
-        },
+        initialValues,
+        onSubmit,
         validationSchema
     });
 
