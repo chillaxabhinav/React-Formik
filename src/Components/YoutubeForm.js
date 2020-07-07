@@ -13,7 +13,12 @@ const validationSchema = Yup.object({
 const initialValues = {
     name : '',
     email : '',
-    channel : ''
+    channel : '',
+    social : {
+      facebook : '',
+      twitter : ''
+    },
+    phoneNumber : ['','']
 };
 
 const onSubmit = (values) => {
@@ -54,6 +59,18 @@ const YoutubeForm = () =>{
             name="channel"
           />
           <ErrorMessage name="channel" />
+
+          <label>Facebook profile</label>
+          <Field type="text" name="social.facebook"/>
+
+          <label>Twitter Profile</label>
+          <Field type="text" name="social.twitter"/>
+
+          <label>PhoneNumber-1</label>
+          <Field type="text" name="phoneNumber[0]"/>
+
+          <label>PhoneNumber-2</label>
+          <Field type="text" name="phoneNumber[1]"/>
 
           <button type="submit">Submit</button>
         </Form>
