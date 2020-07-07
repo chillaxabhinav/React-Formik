@@ -41,27 +41,30 @@ const YoutubeForm = () =>{
             type="text"
             name="name"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.name}
           />
-          {formik.errors.name ? <div>{formik.errors.name}</div> : null}
+          {formik.touched.name && formik.errors.name ? <div>{formik.errors.name}</div> : null}
 
           <label>E-mail</label>
           <input
             type="email"
             name="email"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.email}
           />
-          {formik.errors.email ? <div>{formik.errors.email}</div> : null}
+          {formik.touched.email && formik.errors.email ? <div>{formik.errors.email}</div> : null}
 
           <label>Channel</label>
           <input
             type="text"
             name="channel"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.channel}
           />
-          {formik.errors.channel ? <div>{formik.errors.channel}</div> : null}
+          {formik.touched.channel && formik.errors.channel ? <div>{formik.errors.channel}</div> : null}
 
           <button type="submit">Submit</button>
         </form>
