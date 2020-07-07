@@ -28,7 +28,7 @@ const onSubmit = (values) => {
 const YoutubeForm = () =>{
 
     return (
-      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit} validateOnChange={false} validateOnBlur={false}>
         <Form>
           <label>Name</label>
           <Field
