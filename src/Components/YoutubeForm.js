@@ -27,10 +27,19 @@ const YoutubeForm = () =>{
         <Form>
           <label>Name</label>
           <Field
+            as="input"
             type="text"
             name="name"
           />
-          <ErrorMessage name="name" />
+          <ErrorMessage name="name">
+            {
+                (errormsg) => {
+                    return (
+                        <div className="myerr">{errormsg}</div>
+                    )
+                }
+            }
+          </ErrorMessage>
 
           <label>E-mail</label>
           <Field
