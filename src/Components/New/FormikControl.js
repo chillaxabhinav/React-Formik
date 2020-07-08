@@ -17,8 +17,6 @@ const FormikControl = (props) => {
 
         case 'radio': return <RadioButtons {...rest} />
 
-        case 'checkbox':
-
         default : return null;
     }
 }
